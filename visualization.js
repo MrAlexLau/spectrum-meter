@@ -1,7 +1,6 @@
 var drawCircles = function (domSelector) {
   var svg,
-      innerCircle,
-      outerCircle,
+      rectangles,
       isLocked;
   var defaultWidth = 20;
   var rectangleSizes = [40, 40, 50, 40];
@@ -12,8 +11,7 @@ var drawCircles = function (domSelector) {
     .attr("width", 500)
     .style("background-color", "red");
 
-
-  outerCircle = svg.selectAll("rect")
+  rectangles = svg.selectAll("rect")
     .data(rectangleSizes)
     .enter()
     .append("rect")
